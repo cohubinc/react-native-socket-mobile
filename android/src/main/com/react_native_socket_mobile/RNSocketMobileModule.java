@@ -10,18 +10,18 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 
-public class RNReactNativeSocketMobileModule extends ReactContextBaseJavaModule {
+public class ReactNativeSocketMobileModule extends ReactContextBaseJavaModule {
 
   ReactApplicationContext reactContext;
 
-  public RNReactNativeSocketMobileModule(ReactApplicationContext reactContext) {
+  public ReactNativeSocketMobileModule(ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
   }
 
   @Override
   public String getName() {
-    return "RNReactNativeSocketMobile";
+    return "ReactNativeSocketMobile";
   }
 
   // startObserving
