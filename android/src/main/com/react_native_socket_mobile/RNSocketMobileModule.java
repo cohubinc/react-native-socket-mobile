@@ -31,7 +31,7 @@ public class RNReactNativeSocketMobileModule extends ReactContextBaseJavaModule 
   // updateStatusFromDevices
 
   @ReactMethod
-  public void start {
+  public String start(bundleId, developerId, appKey) {
     return "TESTING 123"
   }
 }
