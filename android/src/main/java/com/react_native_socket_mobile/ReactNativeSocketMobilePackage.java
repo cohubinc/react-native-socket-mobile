@@ -1,3 +1,4 @@
+
 package com.react_native_socket_mobile;
 
 import java.util.Arrays;
@@ -12,17 +13,16 @@ import com.facebook.react.bridge.JavaScriptModule;
 public class ReactNativeSocketMobilePackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-      return Arrays.<NativeModule>asList(new RNReactNativeSocketMobileModule(reactContext));
+      return Arrays.<NativeModule>asList(new ReactNativeSocketMobileModule(reactContext));
+    }
+
+    // Deprecated from RN 0.47
+    public List<Class<? extends JavaScriptModule>> createJSModules() {
+      return Collections.emptyList();
     }
 
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
       return Collections.emptyList();
     }
-
-    // Backward compatibility
-   public List<Class<? extends JavaScriptModule>> createJSModules() {
-      return new ArrayList<>();
-    }
-  }
 }

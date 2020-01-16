@@ -8,6 +8,7 @@
   "license": "MIT",
   "files": [
     "ios/",
+    "android/",
     "index.js"
   ],
   "scripts": {
