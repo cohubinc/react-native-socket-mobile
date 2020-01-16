@@ -5,9 +5,9 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
+// import com.socketmobile:capture;
 
 public class ReactNativeSocketMobileModule extends ReactContextBaseJavaModule {
-
   private final ReactApplicationContext reactContext;
 
   public ReactNativeSocketMobileModule(ReactApplicationContext reactContext) {
@@ -16,26 +16,53 @@ public class ReactNativeSocketMobileModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public String startObserving() {
-    return "TESTING 123";
+  public void startObserving() {
   }
 
   @ReactMethod
-  public String stopObserving() {
-    return "TESTING 123";
+  public void stopObserving() {
   }
 
   @ReactMethod
-  public String start(String bundleId, String developerId, String appKey, String resolver, String rejecter) {
-    return "TESTING 123";
+  public void start(String bundleId, String developerId, String appKey) {
+    // AppKey appkey = new AppKey(appKey, bundleId, developerId);
+
+    // ConnectionCallback connectionCallback = new ConnectionCallback() {
+    //   @override public void onConnectionStateChanged(ConnectionState state) {
+    //       switch(state.get()) {
+    //           case ConnectionState.CONNECTING:
+    //               // do something or nothing
+    //               break;
+    //           case ConnectionState.CONNECTED:
+    //               // client is now usable
+    //               break;
+    //           case ConnectionState.DISCONNECTING:
+    //               // only called when shutting down gracefully
+    //               break;
+    //           case ConnectionState.DISCONNECTED:
+    //               if(state.disconnectCausedByError()) {
+    //                   // Handle error
+    //               } else {
+    //                   // Shut down normally
+    //               }
+    //           default:
+    //               // Unreachable
+    //               break;
+    //       }
+    //   }
+    // }
+
+    // Listener listener = new Listener()
+
+    // CaptureClient client = new CaptureClient(appkey);
+    // client.setListener(listener);
+    // client.connect(connectionCallback);
   }
   @ReactMethod
-  public String stop(String resolve, String rejecter) {
-    return "TESTING 123";
+  public void stop() {
   }
   @ReactMethod
-  public String updateStatusFromDevices() {
-    return "TESTING 123";
+  public void updateStatusFromDevices() {
   }
 
   @Override
