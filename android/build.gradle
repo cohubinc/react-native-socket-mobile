@@ -27,10 +27,22 @@ android {
     }
 }
 
+dependencies {
+    implementation 'com.socketmobile:capture-android:1.1.0'
+    implementation 'com.facebook.react:react-native:+'
+}
+
+rootProject.allprojects {
+    repositories {
+        maven {
+            name "SocketMobile"
+            url "https://bin.socketmobile.com/repo/snapshots"
+        }
+    }
+}
+
+
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation 'com.facebook.react:react-native:+'
-}

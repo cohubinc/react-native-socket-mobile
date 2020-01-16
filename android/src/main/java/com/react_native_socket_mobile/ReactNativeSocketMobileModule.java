@@ -5,7 +5,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
-// import com.socketmobile:capture;
+import com.socketmobile:capture;
 
 public class ReactNativeSocketMobileModule extends ReactContextBaseJavaModule {
   private final ReactApplicationContext reactContext;
@@ -25,42 +25,44 @@ public class ReactNativeSocketMobileModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void start(String bundleId, String developerId, String appKey) {
-    // AppKey appkey = new AppKey(appKey, bundleId, developerId);
+    AppKey appkey = new AppKey(appKey, bundleId, developerId);
 
-    // ConnectionCallback connectionCallback = new ConnectionCallback() {
-    //   @override public void onConnectionStateChanged(ConnectionState state) {
-    //       switch(state.get()) {
-    //           case ConnectionState.CONNECTING:
-    //               // do something or nothing
-    //               break;
-    //           case ConnectionState.CONNECTED:
-    //               // client is now usable
-    //               break;
-    //           case ConnectionState.DISCONNECTING:
-    //               // only called when shutting down gracefully
-    //               break;
-    //           case ConnectionState.DISCONNECTED:
-    //               if(state.disconnectCausedByError()) {
-    //                   // Handle error
-    //               } else {
-    //                   // Shut down normally
-    //               }
-    //           default:
-    //               // Unreachable
-    //               break;
-    //       }
-    //   }
-    // }
+    ConnectionCallback connectionCallback = new ConnectionCallback() {
+      @override public void onConnectionStateChanged(ConnectionState state) {
+          switch(state.get()) {
+              case ConnectionState.CONNECTING:
+                  // do something or nothing
+                  break;
+              case ConnectionState.CONNECTED:
+                  // client is now usable
+                  break;
+              case ConnectionState.DISCONNECTING:
+                  // only called when shutting down gracefully
+                  break;
+              case ConnectionState.DISCONNECTED:
+                  if(state.disconnectCausedByError()) {
+                      // Handle error
+                  } else {
+                      // Shut down normally
+                  }
+              default:
+                  // Unreachable
+                  break;
+          }
+      }
+    };
 
-    // Listener listener = new Listener()
+    Listener listener = new Listener();
 
-    // CaptureClient client = new CaptureClient(appkey);
-    // client.setListener(listener);
-    // client.connect(connectionCallback);
+    CaptureClient client = new CaptureClient(appkey);
+    client.setListener(listener);
+    client.connect(connectionCallback);
   }
+  
   @ReactMethod
   public void stop() {
   }
+  
   @ReactMethod
   public void updateStatusFromDevices() {
   }
